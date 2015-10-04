@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MySQL_prac.iml" filepath="$PROJECT_DIR$/MySQL_prac.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PracMySQL.iml" filepath="$PROJECT_DIR$/PracMySQL.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
