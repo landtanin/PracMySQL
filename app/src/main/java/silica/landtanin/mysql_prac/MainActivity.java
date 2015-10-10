@@ -1,5 +1,6 @@
 package silica.landtanin.mysql_prac;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,6 +10,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Explicit
     private UserTABLE objUserTABLE;
+    private FoodTABLE objFoodTABLE;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,19 +21,31 @@ public class MainActivity extends AppCompatActivity {
         createAndConnectDatabase();
 
         // Tester Add Value
-        testerAddValue();
+       // testerAddValue();
+
+        deleteAllData();
 
 
     } // onCreate
 
+    private void deleteAllData() {
+
+        SQLiteDatabase objSqLiteDatabase = openOrCreateDatabase("Restaurant1.db", MODE_PRIVATE, null);
+        objSqLiteDatabase.delete("userTABLE", null, null);
+        objSqLiteDatabase.delete("foodTABLE", null, null);
+
+    } // deleteAllData
+
     private void testerAddValue() {
 
         objUserTABLE.addNewUser("testUser", "hahahaha", "kab");
+        objFoodTABLE.addFood("Fries", "test source", "200");
 
     } // testerAddValue
 
     private void createAndConnectDatabase() {
         objUserTABLE = new UserTABLE(this);
+        objFoodTABLE = new FoodTABLE(this);
     } // createAndConnectDatabase
 
     @Override
